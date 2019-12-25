@@ -27,7 +27,7 @@ type render struct {
 	html.Config
 }
 
-// NewRenderer return new attributes block renderer.
+// NewRenderer return new renderer for image figure.
 func NewRenderer(opts ...html.Option) renderer.NodeRenderer {
 	var r = &render{
 		Config: html.NewConfig(),
@@ -120,7 +120,7 @@ func isFigure(node ast.Node) bool {
 		child.HasChildren()
 }
 
-// extension defines a goldmark.Extender for markdown block attributes.
+// extension defines a goldmark.Extender for markdown image figures.
 type extension struct{}
 
 // Extend implement goldmark.Extender interface.
@@ -132,8 +132,8 @@ func (a *extension) Extend(m goldmark.Markdown) {
 	)
 }
 
-// Extension is a goldmark.Extender with markdown block attributes support.
+// Extension is a goldmark.Extender with markdown image figures support.
 var Extension goldmark.Extender = new(extension)
 
-// Enable is a goldmark.Option with block attributes support.
+// Enable is a goldmark.Option with image figures support.
 var Enable = goldmark.WithExtensions(Extension)
