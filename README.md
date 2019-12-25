@@ -1,5 +1,7 @@
 # goldmark-figures
 
+[![GoDoc](https://godoc.org/github.com/mdigger/goldmark-figures?status.svg)](https://godoc.org/github.com/mdigger/goldmark-figures)
+
 This [goldmark](https://github.com/yuin/goldmark) parser extension adds 
 paragraph image render as figure.
 
