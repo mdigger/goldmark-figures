@@ -27,8 +27,8 @@ type render struct {
 	html.Config
 }
 
-// NewRenderer return new renderer for image figure.
-func NewRenderer(opts ...html.Option) renderer.NodeRenderer {
+// newRenderer return new renderer for image figure.
+func newRenderer(opts ...html.Option) renderer.NodeRenderer {
 	var r = &render{
 		Config: html.NewConfig(),
 	}
@@ -38,7 +38,7 @@ func NewRenderer(opts ...html.Option) renderer.NodeRenderer {
 	return r
 }
 
-var defaultRenderer = NewRenderer()
+var defaultRenderer = newRenderer()
 
 // RegisterFuncs implement renderer.NodeRenderer interface.
 func (r *render) RegisterFuncs(reg renderer.NodeRendererFuncRegisterer) {
